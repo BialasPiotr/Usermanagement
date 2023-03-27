@@ -1,0 +1,83 @@
+<div class="container mt-4" >
+ 
+    <div class="card">
+        <h1>User Registration</h1>
+ 
+<form>
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" [(ngModel)]="username" [ngModelOptions]="{standalone: true}" class="form-control" id="name" placeholder="Enter Name">
+ 
+    </div>
+ 
+    <div class="form-group">
+        <label>email</label>
+        <input type="text" [(ngModel)]="useremail" [ngModelOptions]="{standalone: true}" class="form-control" id="email" placeholder="Enter Email">
+  
+      </div>
+      <div class="form-group">
+        <label>password</label>
+        <input type="text" [(ngModel)]="userpassword" [ngModelOptions]="{standalone: true}" class="form-control" id="password" placeholder="Enter Passwprd">
+   
+      </div>
+      <div class="form-group">
+        <label>birthdate</label>
+        <input type="text" [(ngModel)]="userbirthdate" [ngModelOptions]="{standalone: true}" class="form-control" id="birthdate" placeholder="Enter Birthdate">
+   
+      </div>
+ 
+      <div class="form-group">
+        <label>Phone</label>
+        <input type="text" [(ngModel)]="userphone" [ngModelOptions]="{standalone: true}" class="form-control" id="phone" placeholder="Enter Phone">
+  
+      </div>
+    
+    <button type="submit" class="btn btn-primary mt-4" (click)="save()" >Submit</button>
+  </form>
+</div>
+<div>
+ 
+ 
+    <div class="container mt-4" >
+ 
+        <h1>User Table</h1>
+ 
+ 
+ 
+ 
+    <table class="table">
+        <thead>
+        
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">name</th>
+            <th scope="col">password</th>
+            <th scope="col">birthdate</th>
+            <th scope="col">email</th>
+            <th scope="col">phone</th>
+            <th scope="col">Option</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let UserItem of UserArray">
+ 
+            <th scope="row">{{UserItem.id  }}</th>
+            <td>{{UserItem.name  | uppercase}}</td>
+            <td>{{UserItem.email }}</td>
+            <td>{{UserItem.phone }}</td>
+            <td>{{UserItem.password }}</td>
+            <td>{{UserItem.birthdate }}</td>
+ 
+            <td>
+              <button type="button" class="btn btn-success" (click)="setUpdate(UserItem)">Edit</button>
+              
+              <button type="button" class="btn btn-danger" (click)="setDelete(UserItem)">Delete</button>
+            
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+ 
+ 
+    </div>
